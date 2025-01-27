@@ -12,4 +12,21 @@ public class main {
         this.joueurCourant = joueur1;
         this.gui = new InterfaceGraphique(this); // lie l'interface graphique à la partie 
     }
+
+public void changerJoueur() {
+    joueurCourant = (joueurCourant == joueur1) ? joueur2 : joueur1;
+}
+
+
+    public boolean deplacerPiece(int startX, int startY, int endX, int endY) { // méthode permettant de déplacer une pièce
+
+        if (estMouvementValide(startX, startY, endX, endY)) { // si le mouvement est valide alors on peut déplacer la pièce
+
+            plateau.deplacerPiece(startX, startY, endX, endY);
+
+            verifierPromotion(endX, endY); // vérifie si la pièce doit être promue par exemple au rang de reine
+            return true;
+        }
+        return false;
+}
 }
