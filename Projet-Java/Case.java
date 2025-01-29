@@ -16,3 +16,8 @@ public class Case { // Classe qui représente une case du plateau de jeu
     public Piece getPiece() {// Méthode qui permet de récupérer la pièce sur la case
         return piece;
     }
+
+    public void setPiece(Piece piece) {// Méthode qui permet de placer une pièce sur la case
+        this.piece = piece;
+    }
+}
