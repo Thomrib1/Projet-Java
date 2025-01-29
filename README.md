@@ -27,3 +27,8 @@ contenir une pièce.
 éventuellement l'ordinateur.
 
 Il n'y a pas d'interface Swing, tout ce fait depuis le terminal.
+
+BRANCHES :
+
+UGO ET PIERRE POSSEDENT UNE BRANCHE 
+Thomas a FAIT SES COMMIT SUR LA BRANCHE MAIN ET D4AUTRES BRANCHES.
