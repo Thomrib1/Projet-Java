@@ -32,11 +32,11 @@ public class Jeu { // on déclare les attributs de la classe Jeu : plateau, joue
     private void demanderEtDeplacerPion() {
         boolean mouvementValide = false;
         while (!mouvementValide) {
-            System.out.println("Entrez la ligne et la colonne du pion a deplacer (ex: 5 2): ");
+            System.out.println("Entrez la ligne et la colonne du pion a deplacer (ex: 7 2): ");
             int ligneDep = scanner.nextInt() - 1;
             int colonneDep = scanner.nextInt() - 1;
 
-            System.out.println("Entrez la ligne et la colonne de la destination (ex: 4 3): ");
+            System.out.println("Entrez la ligne et la colonne de la destination (ex: 6 3): ");
             int ligneArr = scanner.nextInt() - 1;
             int colonneArr = scanner.nextInt() - 1;
 
