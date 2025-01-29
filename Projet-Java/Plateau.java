@@ -21,37 +21,38 @@ public class Plateau {
     }
 
     public void afficher() {
-        // Affiche les numéros des colonnes
-        System.out.print("    "); // Espaces pour aligner avec les numéros de ligne
-        for (int j = 1; j <= TAILLE; j++) {
-            if (j < 10) {
-                System.out.print(j + "  ");
-            } else {
-                System.out.print(j + " ");
-            }
-        }
-        System.out.println();
-        
-        System.out.print("   ");
-        for (int j = 0; j < TAILLE * 3 + 1; j++) {
-            System.out.print("-");
+        // Afficher les numéros de colonnes
+        System.out.print("  ");
+        for (int j = 0; j < TAILLE; j++) {
+            System.out.print(" " + (j + 1) + "  ");
         }
         System.out.println();
 
-        // Affiche le plateau avec les numéros de ligne
         for (int i = 0; i < TAILLE; i++) {
-            if (i + 1 < 10) {
-                System.out.print(" " + (i + 1) + " |");
-            } else {
-                System.out.print((i + 1) + " |");
+            // Afficher la ligne de séparation
+            if (i > 0) {
+                System.out.print("  ");
+                for (int j = 0; j < TAILLE; j++) {
+                    System.out.print("---");
+                    if (j < TAILLE - 1) {
+                        System.out.print("+");
+                    }
+                }
+                System.out.println();
             }
-            
+
+            // Afficher le numéro de ligne
+            System.out.print((i + 1) + " ");
+
+            // Afficher les cases
             for (int j = 0; j < TAILLE; j++) {
                 if (cases[i][j].estVide()) {
-                    System.out.print(" . "); //Affiche un "." pour une case vide.
+                    System.out.print(" . ");
                 } else {
-                    Piece piece = cases[i][j].getPiece();
-                    System.out.print(" " + (piece.estBlanc() ? "O" : "X") + " "); // Affiche O pour un pion blanc et X pour un pion noir.
+                    System.out.print(" " + cases[i][j].getPiece().toString() + " ");
+                }
+                if (j < TAILLE - 1) {
+                    System.out.print("|");
                 }
             }
             System.out.println();
