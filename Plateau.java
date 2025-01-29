@@ -22,7 +22,7 @@ public class Plateau {
 
     public void afficher() {
         // Affiche les numéros des colonnes
-        System.out.print("    "); // Espaces pour aligner avec les numéros de ligne
+        System.out.print("     "); // Espaces pour aligner avec les numéros de ligne
         for (int j = 1; j <= TAILLE; j++) {
             if (j < 10) {
                 System.out.print(j + "  ");
