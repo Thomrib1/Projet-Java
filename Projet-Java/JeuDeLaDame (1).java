@@ -30,7 +30,7 @@ public class JeuDeLaDame {
             for (int j = 0; j < 10; j++) {
                 if (i < 4 && (i + j) % 2 == 1) {
                     plateau[i][j] = 'X'; //les pions noirs
-                } else if (i > 4 && (i + j) % 2 == 1) {
+                } else if (i > 5 && (i + j) % 2 == 1) {
                     plateau[i][j] = 'O'; //les pions blancs
                 } else {
                     plateau[i][j] = '.'; //les cases vides
