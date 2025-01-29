@@ -1,6 +1,6 @@
 ﻿# Projet-Java
 
-Une fois le dossier téléchargé faire un "javac *.java" pour compiler tout les fichiers.
+Une fois le dossier téléchargé faire un "javac *.java" pour compiler tout les fichiers si nécessaire.
 
 Se rendre dans le dossier projet-java puis exécuter le code avec "java .\JeuDeLaDame.java"
 
