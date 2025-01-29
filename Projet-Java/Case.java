@@ -12,3 +12,7 @@ public class Case { // Classe qui représente une case du plateau de jeu
     public boolean estVide() { // Méthode qui permet de savoir si la case est vide
         return piece == null;
     }
+
+    public Piece getPiece() {// Méthode qui permet de récupérer la pièce sur la case
+        return piece;
+    }
