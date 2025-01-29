@@ -21,13 +21,37 @@ public class Plateau {
     }
 
     public void afficher() {
+        // Affiche les numéros des colonnes
+        System.out.print("    "); // Espaces pour aligner avec les numéros de ligne
+        for (int j = 1; j <= TAILLE; j++) {
+            if (j < 10) {
+                System.out.print(j + "  ");
+            } else {
+                System.out.print(j + " ");
+            }
+        }
+        System.out.println();
+        
+        System.out.print("   ");
+        for (int j = 0; j < TAILLE * 3 + 1; j++) {
+            System.out.print("-");
+        }
+        System.out.println();
+
+        // Affiche le plateau avec les numéros de ligne
         for (int i = 0; i < TAILLE; i++) {
+            if (i + 1 < 10) {
+                System.out.print(" " + (i + 1) + " |");
+            } else {
+                System.out.print((i + 1) + " |");
+            }
+            
             for (int j = 0; j < TAILLE; j++) {
                 if (cases[i][j].estVide()) {
-                    System.out.print(". "); //Affiche un . pour une case vide.
+                    System.out.print(" . "); //Affiche un "." pour une case vide.
                 } else {
                     Piece piece = cases[i][j].getPiece();
-                    System.out.print((piece.estBlanc() ? "O " : "X ")); // Affiche O pour un pion blanc et X pour un pion noir.
+                    System.out.print(" " + (piece.estBlanc() ? "O" : "X") + " "); // Affiche O pour un pion blanc et X pour un pion noir.
                 }
             }
             System.out.println();
@@ -38,32 +62,25 @@ public class Plateau {
         if (!estDansLesPlateau(ligneDep, colonneDep) || !estDansLesPlateau(ligneArr, colonneArr)) {
             return false; // Déplace un pion si le mouvement est valide.
         }
-
         Case caseDepart = cases[ligneDep][colonneDep];
         Case caseArrivee = cases[ligneArr][colonneArr];
-
         if (caseDepart.estVide() || !caseArrivee.estVide()) {
             return false;
         }
-
         Piece piece = caseDepart.getPiece();
         if (piece.estBlanc() != joueur.estBlanc()) {
             return false;
         }
-
         int deltaLigne = ligneArr - ligneDep;
         int deltaColonne = colonneArr - colonneDep;
-
         if (Math.abs(deltaLigne) != Math.abs(deltaColonne)) {
             return false;// Vérification pour le mouvement en diagonale
         }
-
         if (Math.abs(deltaLigne) == 1) { //Vérifie que le joueur déplace bien un pion de sa couleur
             caseArrivee.setPiece(piece);
             caseDepart.setPiece(null);
             return true;
         }
-
         // Capture
         if (Math.abs(deltaLigne) == 2) { 
             int milieuLigne = (ligneDep + ligneArr) / 2;
@@ -77,7 +94,6 @@ public class Plateau {
                 return true;
             }
         }
-
         return false;
     }
 
