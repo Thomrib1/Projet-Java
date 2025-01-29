@@ -8,3 +8,7 @@ public class Case { // Classe qui représente une case du plateau de jeu
         this.colonne = colonne;
         this.piece = null;
     }
+
+    public boolean estVide() { // Méthode qui permet de savoir si la case est vide
+        return piece == null;
+    }
